@@ -1,0 +1,12 @@
+*.md
+*.gitignore
+*.log
+*.ico
+*.svg
+*.snap
+*.ttf
+*.woff
+*.woff2
+*.lock
+react-app-env.d.ts
+reportWebVitals.ts
