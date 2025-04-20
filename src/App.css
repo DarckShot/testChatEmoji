@@ -1,0 +1,38 @@
+.app {
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    height: 95vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+button {
+    color: white;
+
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    padding: 0;
+    margin: 0;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.auth-form, .room-selector, .chat-container {
+    animation: fadeIn 0.3s ease-out;
+}

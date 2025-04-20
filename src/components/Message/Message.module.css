@@ -1,0 +1,135 @@
+.messageContainer {
+    position: relative;
+    max-width: 80%;
+    padding: 0.8rem 1rem;
+    margin-bottom: 0.5rem;
+    border-radius: 12px;
+
+    animation: fadeIn 0.3s ease-out;
+
+    .userInfo {
+        margin-bottom: 0.3rem;
+
+        display: flex;
+        align-items: center;
+
+        .username {
+            font-weight: bold;
+            font-size: 0.85rem;
+            color: #555;
+        }
+    }
+
+    .quotedMessage {
+        padding: 0.5rem;
+        margin-bottom: 0.5rem;
+        background-color: rgba(0, 0, 0, 0.1);
+        border-left: 3px solid #4a90e2;
+        border-radius: 4px;
+
+        font-size: 0.9rem;
+        color: #666;
+
+        .quotedUsername {
+            font-weight: bold;
+            color: #4a90e2;
+        }
+    }
+
+    .currentUser .quotedMessage {
+        background-color: rgba(255, 255, 255, 0.2);
+        color: rgba(255, 255, 255, 0.9);
+    }
+
+    .currentUser .quotedUsername {
+        color: #aad4ff;
+    }
+
+    .mediaContainer {
+        margin-bottom: 0.5rem;
+        border-radius: 8px;
+        overflow: hidden;
+
+        .media {
+            display: block;
+
+            max-width: 100%;
+            max-height: 300px;
+            border-radius: 8px;
+        }
+    }
+
+    .messageContent {
+        word-wrap: break-word;
+        line-height: 1.4;
+    }
+
+    .currentUser .messageContent {
+        color: white;
+    }
+
+    .messageFooter {
+        margin-top: 0.3rem;
+
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+
+        font-size: 0.75rem;
+
+        .time {
+            margin-right: 0.5rem;
+        }
+
+        .quoteButton {
+            padding: 0 0.3rem;
+            background: none;
+            border: none;
+
+            color: inherit;
+            font-size: 1rem;
+
+            cursor: pointer;
+            opacity: 0.5;
+            transition: opacity 0.2s;
+
+        }
+
+        .quoteButton:hover {
+            opacity: 1;
+        }
+    }
+}
+
+.currentUser {
+    align-self: flex-end;
+    background-color: #4a90e2;
+    color: white;
+    border-bottom-right-radius: 4px;
+}
+
+.otherUser {
+    align-self: flex-start;
+    background-color: #f1f3f4;
+    color: #333;
+    border-bottom-left-radius: 4px;
+}
+
+.currentUser .messageFooter {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.otherUser .messageFooter {
+    color: #888;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(5px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
