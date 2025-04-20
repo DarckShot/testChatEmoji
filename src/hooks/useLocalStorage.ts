@@ -19,7 +19,6 @@ const useLocalStorage = <T>(key: string, initialValue: T) => {
         const valueToStore = value instanceof Function ? value(storedValue) : value;
         window.localStorage.setItem(key, JSON.stringify(valueToStore));
         setStoredValue(valueToStore);
-        // Генерируем событие для других вкладок
         window.dispatchEvent(new Event('local-storage'));
       } catch (error) {
         console.warn(`Error setting localStorage key "${key}":`, error);
@@ -33,7 +32,6 @@ const useLocalStorage = <T>(key: string, initialValue: T) => {
       setStoredValue(readValue());
     };
 
-    // Слушаем наши кастомные события и стандартные storage события
     window.addEventListener('local-storage', handleStorageChange);
     window.addEventListener('storage', handleStorageChange);
 

@@ -11,7 +11,6 @@ const useChat = (currentUser: User | null, currentRoom: string | null) => {
   );
   const [rooms, setRooms] = useLocalStorage<Room[]>('chat_app_rooms', []);
 
-  // Инициализация дефолтной комнаты
   useEffect(() => {
     if (rooms.length === 0) {
       setRooms([
@@ -56,7 +55,6 @@ const useChat = (currentUser: User | null, currentRoom: string | null) => {
         [currentRoom]: [...(prev[currentRoom] || []), newMessage],
       }));
 
-      // Обновляем активность комнаты
       setRooms((prev) =>
         prev.map((room) =>
           room.name === currentRoom
